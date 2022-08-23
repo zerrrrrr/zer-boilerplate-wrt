@@ -6,7 +6,7 @@ const config = merge(commonConfig, {
   mode: 'development',
   devServer: {
     hot: true,
-    port: 8080,
+    port: 5173,
     compress: true,
     host: 'localhost',
     disableHostCheck: true,

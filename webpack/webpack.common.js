@@ -9,12 +9,11 @@ const commonCssLoader = [
   'postcss-loader',
 ]
 module.exports = {
-  entry: { index: ['react-hot-loader/patch', './src/index.tsx'] },
+  entry: { index: ['./src/index.tsx'] },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     alias: {
       '@': path.resolve(path.join(__dirname, '../src')),
-      'react-dom': '@hot-loader/react-dom',
     },
   },
   module: {
@@ -23,10 +22,11 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         use: [
           {
-            loader: 'esbuild-loader',
-            options: {
-              loader: 'jsx',
-            },
+	    loader: 'babel-loader',
+            // loader: 'esbuild-loader',
+            // options: {
+            //   loader: 'jsx',
+            // },
           },
         ],
       },
